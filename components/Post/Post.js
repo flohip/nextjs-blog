@@ -21,13 +21,14 @@ const Container = styled.article`
   box-shadow: 0 0 5px 1px white;
   padding: 1rem;
   border-radius: 12px;
+
+  :hover {
+    box-shadow: 0 0 15px 5px white;
+    background-color: rgb(22, 22, 22);
+    cursor: pointer;
+  }
   a:link {
     text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: hotpink;
-    cursor: pointer;
   }
 `;
 

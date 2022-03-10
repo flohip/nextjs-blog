@@ -42,6 +42,10 @@ const StyledHeader = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    font-size: 3rem;
+  }
 `;
 
 const PostsWrapper = styled.div`
@@ -51,10 +55,8 @@ const PostsWrapper = styled.div`
   align-items: center;
 
   h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: orange;
-    &:hover {
-      color: hotpink;
-    }
   }
 `;
