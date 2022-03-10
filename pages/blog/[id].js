@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { getPostData, getSortedPostsData } from "../../lib/posts";
 
-export default function BlogPost({ ...post }) {
-  console.log(post);
+export default function BlogPost({ post }) {
   return (
     <>
       <h1>{post.title}</h1>
@@ -20,7 +19,6 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map((post) => ({ params: { id: post.id } })),
-    // { params: { ... } }
     fallback: false, // false or 'blocking'
   };
 }
@@ -28,9 +26,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context.params.id;
   const post = await getPostData(id);
+  // somehow get the data!
   return {
     props: {
-      posts: post,
+      post: post,
     },
   };
 }
