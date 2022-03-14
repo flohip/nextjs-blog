@@ -1,31 +1,38 @@
 import Link from "next/link";
-import * as React from "react";
 import styled from "styled-components";
 
 export function Post({ id, title, date }) {
+  // console.log(`ID:${id} \nTITLE:${title} \nDATE:${date}`);
   return (
-    <Link href={`/blog/${id}`}>
-      <Container>
+    <Container>
+      <Link href={`/blog/${id}`}>
         <a>
           <Title id={id}>{title}</Title>
           <time dateTime={date}>{date}</time>
         </a>
-      </Container>
-    </Link>
+      </Link>
+    </Container>
   );
 }
 
-const Container = styled.article`
-  color: orange;
-  background-color: rgb(44, 44, 44);
+const Container = styled.div`
+  background-color: var(--secondary-bg-color-dark);
   box-shadow: 0 0 5px 1px white;
   padding: 1rem;
   border-radius: 12px;
-
   :hover {
     box-shadow: 0 0 15px 5px white;
-    background-color: rgb(22, 22, 22);
+    background-color: var(--hover-bg-color-dark);
     cursor: pointer;
+
+    a {
+      color: var(--secondary-bg-color-bright);
+    }
+  }
+  a {
+    color: var(--primary-color-bright);
+  }
+  a:hover {
   }
   a:link {
     text-decoration: none;
